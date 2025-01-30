@@ -46,38 +46,38 @@ const SaleOffers: React.FC = () => {
       {
         id: 1,
         image: item17,
-        description: "Fames habitasse risus ultricies tortor sit",
+        description: "Vulputate velit viverra volutpat volutpat tristique",
         price: 2.5,
         time: "22:59",
         likes: 24,
         bidders: "101 people are bidding"
       },
       {
-          id: 2,
-          image: item18,
-          description: "Beautiful abstract art piece with vibrant colors",
-          price: 2.5,
-          time: "22:59",
-          likes: 29,
-          bidders: "101 people are bidding"
+        id: 2,
+        image: item18,
+        description: "Egestas blandit sit egestas non sed. Purus semper",
+        price: 2.5,
+        time: "22:59",
+        likes: 29,
+        bidders: "101 people are bidding"
       },
       {
         id: 3,
         image: item19,
-        description: "Fames habitasse risus ultricies tortor sit",
+        description: "Id ut consequat netus nec vel amet ut porta in augue",
         price: 2.5,
         time: "22:59",
         likes: 24,
         bidders: "101 people are bidding"
       },
       {
-          id: 4,
-          image: item20,
-          description: "Beautiful abstract art piece with vibrant colors",
-          price: 2.5,
-          time: "22:59",
-          likes: 29,
-          bidders: "101 people are bidding"
+        id: 4,
+        image: item20,
+        description: "Sed et nibh felis integer tellus turpin",
+        price: 2.5,
+        time: "22:59",
+        likes: 29,
+        bidders: "101 people are bidding"
       },
   ])
 
@@ -95,6 +95,30 @@ const SaleOffers: React.FC = () => {
         }));
     
         setLikedItems(prev => {
+          const newLiked = new Set(prev);
+          if (newLiked.has(id)) {
+            newLiked.delete(id);
+          } else {
+            newLiked.add(id);
+          }
+          return newLiked;
+        });
+      };
+
+      const [topLikedItems, setTopLikedItems] = useState<Set<number>>(new Set());
+    
+      const handleTopLike = (id: number) => {
+        setTopItems(topItem.map(topItem => {
+          if (topItem.id === id) {
+            return {
+              ...topItem,
+              likes: topLikedItems.has(id) ? topItem.likes - 1 : topItem.likes + 1
+            };
+          }
+          return topItem;
+        }));
+    
+        setTopLikedItems(prev => {
           const newLiked = new Set(prev);
           if (newLiked.has(id)) {
             newLiked.delete(id);
@@ -207,11 +231,11 @@ const SaleOffers: React.FC = () => {
 
                             <p>{topItem.bidders}</p>
                           <LikeButton 
-                              onClick={() => handleLike(topItem.id)}
-                              isLiked={likedItems.has(topItem.id)} >
+                              onClick={() => handleTopLike(topItem.id)}
+                              isLiked={topLikedItems.has(topItem.id)} >
                               <HeartIcon 
                                 size={15} 
-                                isLiked={likedItems.has(topItem.id)} 
+                                isLiked={topLikedItems.has(topItem.id)} 
                               />
                             </LikeButton>
 
@@ -221,10 +245,10 @@ const SaleOffers: React.FC = () => {
                       </TopItemCard>
                 ))}
 
-            </TopItemsDiv>
-            <ButtonDiv>
-              <ShowMore>Show me more</ShowMore>
-            </ButtonDiv>
+          </TopItemsDiv>
+          <ButtonDiv>
+            <ShowMore>Show me more</ShowMore>
+          </ButtonDiv>
 
         </BuyNft>
       
@@ -430,6 +454,7 @@ const TopItemsDiv = styled.div`
   display: flex;
   flex-direction: column;
   gap: 10px;
+  overflow: hidden;
 `
 
 const TopContent = styled.div`

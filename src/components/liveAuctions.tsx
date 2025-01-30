@@ -36,7 +36,7 @@ const LiveAuctions: React.FC = () => {
     {
       id: 1,
       image: img1,
-      description: "Beautiful abstract art piece with vibrant colors",
+      description: "Tristique diam a, enim, eros tellus. Viverra etiam",
       price: 2.55,
       timeLeft: 30,
       likes: 24,
@@ -45,7 +45,7 @@ const LiveAuctions: React.FC = () => {
     {
       id: 2,
       image: img2,
-      description: "Breathtaking digital landscape artwork",
+      description: "Vulputate felis purus viverra morbi facilisi eget",
       price: 3.19,
       timeLeft: 45,
       likes: 18,
@@ -54,7 +54,7 @@ const LiveAuctions: React.FC = () => {
     {
       id: 3,
       image: img3,
-      description: "Beautiful abstract art piece with vibrant colors",
+      description: "Dui accumsan leo vestibulum ornare eu",
       price: 1.11,
       timeLeft: 30,
       likes: 24,
@@ -63,7 +63,7 @@ const LiveAuctions: React.FC = () => {
     {
       id: 4,
       image: img4,
-      description: "Beautiful abstract art piece with vibrant colors",
+      description: "Senectus adipiscing nascetur accumsan etiam",
       price: 1.63,
       timeLeft: 30,
       likes: 24,
@@ -72,7 +72,7 @@ const LiveAuctions: React.FC = () => {
     // {
     //   id: 5,
     //   image: img5,
-    //   description: "Beautiful abstract art piece with vibrant colors",
+    //   description: "Mattis at diam lorem nisl nam sed sociis",
     //   price: 2.5,
     //   timeLeft: 30,
     //   likes: 24,

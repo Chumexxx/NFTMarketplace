@@ -67,7 +67,7 @@ const Overline3: React.FC = () => {
           bidders: "101 people are bidding"
         },
         {
-            id: 4,
+            id: 6,
             image: item16,
             description: "Beautiful abstract art piece with vibrant colors",
             price: 2.55,
