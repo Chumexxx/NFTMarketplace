@@ -1,49 +1,112 @@
 # React + TypeScript + Vite
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# Vite React Project Setup
 
-Currently, two official plugins are available:
+## Live Link
+[Visit the Live Project](https://nft-marketplace-chi-ashen.vercel.app/)
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Prerequisites
+Ensure you have the following installed before proceeding:
+- [Node.js](https://nodejs.org/) (Recommended: Latest LTS version)
+- [Git](https://git-scm.com/)
+- A package manager (npm, yarn, or pnpm)
 
-## Expanding the ESLint configuration
+## Installation Steps
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default tseslint.config({
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
+### 1. Clone the Repository
+```sh
+git clone <repository_url>
+cd <project_folder>
 ```
 
-- Replace `tseslint.configs.recommended` to `tseslint.configs.recommendedTypeChecked` or `tseslint.configs.strictTypeChecked`
-- Optionally add `...tseslint.configs.stylisticTypeChecked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and update the config:
+### 2. Install Dependencies
+Using npm:
+```sh
+npm install
+```
+Using yarn:
+```sh
+yarn install
+```
+Using pnpm:
+```sh
+pnpm install
+```
 
-```js
-// eslint.config.js
-import react from 'eslint-plugin-react'
+### 3. Start the Development Server
+Using npm:
+```sh
+npm run dev
+```
+Using yarn:
+```sh
+yarn dev
+```
+Using pnpm:
+```sh
+pnpm dev
+```
 
-export default tseslint.config({
-  // Set the react version
-  settings: { react: { version: '18.3' } },
-  plugins: {
-    // Add the react plugin
-    react,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended rules
-    ...react.configs.recommended.rules,
+The development server will start, and you can access the app at:
+```
+http://localhost:5173/
+```
+
+## Building for Production
+To create an optimized production build, run:
+```sh
+npm run build
+```
+OR
+```sh
+yarn build
+```
+OR
+```sh
+pnpm build
+```
+
+The production-ready files will be located in the `dist/` folder.
+
+## Running the Production Build Locally
+After building the project, you can preview it locally using:
+```sh
+npm run preview
+```
+OR
+```sh
+yarn preview
+```
+OR
+```sh
+pnpm preview
+```
+
+This will serve the built app at `http://localhost:4173/`.
+
+## Deployment
+The project is deployed on [Vercel](https://vercel.com/) and can be accessed at:
+[https://nft-marketplace-chi-ashen.vercel.app/](https://nft-marketplace-chi-ashen.vercel.app/)
+
+To deploy on Vercel yourself:
+1. Install Vercel CLI:
+   ```sh
+   npm install -g vercel
+   ```
+2. Run the deployment command:
+   ```sh
+   vercel
+   ```
+3. Follow the instructions to link the project and deploy.
+
+## Additional Notes
+- Modify `vite.config.js` if needed to adjust configurations.
+- Ensure `.env` files are set up correctly if the project relies on environment variables.
+
+## License
+This project is licensed under [MIT License](LICENSE).
+
+
     ...react.configs['jsx-runtime'].rules,
   },
 })
