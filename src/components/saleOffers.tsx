@@ -4,7 +4,7 @@ import { FaHeart } from "react-icons/fa";
 import { CiAlarmOn } from "react-icons/ci";
 import item10 from "../assets/Item (10).svg"
 import pleat from "../assets/Pleat.svg"
-import image from "../assets/Image.svg"
+// import image from "../assets/Image.svg"
 interface Item {
     id: number;
     image: string;

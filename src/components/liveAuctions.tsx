@@ -6,7 +6,7 @@ import img1 from '../assets/Item.svg'
 import img2 from "../assets/Item (1).svg"
 import img3 from "../assets/Item (2).svg"
 import img4 from "../assets/Item (3).svg"
-import img5 from "./../assets/Item (4).svg"
+// import img5 from "./../assets/Item (4).svg"
 import bidder1 from '../assets/01.svg'
 import bidder2 from '../assets/02.svg'
 import bidder3 from '../assets/02 (1).svg'
