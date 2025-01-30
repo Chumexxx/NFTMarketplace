@@ -5,6 +5,10 @@ import { CiAlarmOn } from "react-icons/ci";
 import item10 from "../assets/Item (10).svg"
 import pleat from "../assets/Pleat.svg"
 // import image from "../assets/Image.svg"
+import item17 from "../assets/Item (17).svg"
+import item18 from "../assets/Item (18).svg"
+import item19 from "../assets/Item (19).svg"
+import item20 from "../assets/Item (20).svg"
 interface Item {
     id: number;
     image: string;
@@ -35,8 +39,47 @@ const SaleOffers: React.FC = () => {
             time: "22:59",
             likes: 29,
             bidders: "101 people are bidding"
-          },
+        },
     ])
+
+    const [topItem, setTopItems] = useState<Item[]>([
+      {
+        id: 1,
+        image: item17,
+        description: "Fames habitasse risus ultricies tortor sit",
+        price: 2.5,
+        time: "22:59",
+        likes: 24,
+        bidders: "101 people are bidding"
+      },
+      {
+          id: 2,
+          image: item18,
+          description: "Beautiful abstract art piece with vibrant colors",
+          price: 2.5,
+          time: "22:59",
+          likes: 29,
+          bidders: "101 people are bidding"
+      },
+      {
+        id: 3,
+        image: item19,
+        description: "Fames habitasse risus ultricies tortor sit",
+        price: 2.5,
+        time: "22:59",
+        likes: 24,
+        bidders: "101 people are bidding"
+      },
+      {
+          id: 4,
+          image: item20,
+          description: "Beautiful abstract art piece with vibrant colors",
+          price: 2.5,
+          time: "22:59",
+          likes: 29,
+          bidders: "101 people are bidding"
+      },
+  ])
 
      const [likedItems, setLikedItems] = useState<Set<number>>(new Set());
     
@@ -61,6 +104,8 @@ const SaleOffers: React.FC = () => {
           return newLiked;
         });
       };
+
+      
   return (
     <Wrapper>
         <SaleDiv>
@@ -108,7 +153,7 @@ const SaleOffers: React.FC = () => {
 
             </ItemsDiv>
 
-            <ShowMore>Show More</ShowMore>
+            <ShowMore>Show me more</ShowMore>
 
         </SaleDiv>
 
@@ -123,7 +168,9 @@ const SaleOffers: React.FC = () => {
                 </Image2>
 
                 <Content1>
-                    <h4>Get started creating and selling your NFTs</h4>
+                  <h4>Get started creating and selling your NFTs</h4>
+
+                  <p>Nunc gravida faucibus netus feugiat tellus, viverra massa feugiat. Mi est sit.</p>
 
                 </Content1>
 
@@ -134,6 +181,50 @@ const SaleOffers: React.FC = () => {
         
 
         <BuyNft>
+          <div>
+            <h4>Top NFT at a lower price</h4>
+          </div>
+
+          <TopItemsDiv>
+                {topItem.map(topItem => (
+                      <TopItemCard key={topItem.id}>
+                        <ImageContainer>
+                          <Image src={topItem.image} />
+                        </ImageContainer>
+            
+                        <TopContent>
+                          <Description>{topItem.description}</Description>
+                          
+                          <TimeAndPriceContainer>
+                            <Time>
+                                <CiAlarmOn size={15}/> <p>{topItem.time}</p>
+                            </Time>
+                              
+                            <Price><p>{topItem.price} ETH</p></Price>
+                          </TimeAndPriceContainer>
+
+                          <BiddersAndLike>
+
+                            <p>{topItem.bidders}</p>
+                          <LikeButton 
+                              onClick={() => handleLike(topItem.id)}
+                              isLiked={likedItems.has(topItem.id)} >
+                              <HeartIcon 
+                                size={15} 
+                                isLiked={likedItems.has(topItem.id)} 
+                              />
+                            </LikeButton>
+
+                          </BiddersAndLike>
+            
+                        </TopContent>
+                      </TopItemCard>
+                ))}
+
+            </TopItemsDiv>
+            <ButtonDiv>
+              <ShowMore>Show me more</ShowMore>
+            </ButtonDiv>
 
         </BuyNft>
       
@@ -145,7 +236,7 @@ export default SaleOffers
 
 const Wrapper = styled.div`
     margin-top: 50px;
-    margin-bottom: 50px;
+    margin-bottom: 100px;
     width: 100%;
     display: flex;
     justify-content: center;
@@ -236,7 +327,7 @@ const Description = styled.p`
 
 const Price = styled.span`
   background-color: #1d1f3b;
-  width: 45px;
+  width: 55px;
   height: 20px;
   border-radius: 3px;
   display: flex;
@@ -253,6 +344,7 @@ const Price = styled.span`
 
 const TimeAndPriceContainer = styled.span`
   display: flex;
+  justify-content: space-between;
   align-items: center;
   gap: 65px;
   color: white;
@@ -267,6 +359,7 @@ const Border = styled.div`
 
 const BiddersAndLike = styled.div`
     display: flex;
+    justify-content: space-between;
     gap: 30px;
     p{
         color: white;
@@ -316,8 +409,37 @@ const Image2 = styled.div`
 
 const BuyNft = styled.div`
     border: 1px solid #262840;
-    width: 400px;
-    height: 650px;
+    width: 370px;
+    height: 610px;
     border-radius: 12px;
+    padding: 20px;
+
+    h4{
+      color: white;
+      font-size: 20px;
+    }
+`
+const TopItemCard = styled.div`
+  height: 100px;
+  display: flex;
+  justify-content: space-around;
+  overflow: hidden;
+`
+
+const TopItemsDiv = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+`
+
+const TopContent = styled.div`
+  width: 300px;
+`;
+
+const ButtonDiv = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
 `
 

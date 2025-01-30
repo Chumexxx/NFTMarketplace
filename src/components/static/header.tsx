@@ -91,6 +91,7 @@ const MyAccountButton = styled.div`
     cursor: pointer;
 
     p{
+        background-color: transparent;
         font-size: 12px;
     }
 `
