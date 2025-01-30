@@ -20,41 +20,41 @@ const Hero = () => {
        <Header/>
        <Wrapper>
 
-        {/* <OrbitPath size={100}>
+        <OrbitPath size={100}>
             <OrbitingRecs rotationDuration={20}>
                 <Rec src={rec1} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
-{/* 
+        </OrbitPath>
+
         <OrbitPath size={250}>
             <OrbitingRecs rotationDuration={30}>
                 <Rec src={rec2} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
+        </OrbitPath>
 
-        {/* <OrbitPath size={400}>
+        <OrbitPath size={400}>
             <OrbitingRecs rotationDuration={40}>
                 <Rec src={rec3} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
+        </OrbitPath>
 
-        {/* <OrbitPath size={550}>
+        <OrbitPath size={550}>
             <OrbitingRecs rotationDuration={40}>
                 <Rec src={rec4} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
+        </OrbitPath>
 
-        {/* <OrbitPath size={700}>
+        <OrbitPath size={700}>
             <OrbitingRecs rotationDuration={40}>
                 <Rec src={rec5} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
+        </OrbitPath>
 
-        {/* <OrbitPath size={850}>
+        <OrbitPath size={850}>
             <OrbitingRecs rotationDuration={40}>
                 <Rec src={rec6} size={120} top="0%" left="50%" />
             </OrbitingRecs>
-        </OrbitPath> */}
+        </OrbitPath>
 
         <DivBox>
             <p>NON FUNGIBLE TOKENS</p>
